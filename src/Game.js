@@ -132,8 +132,14 @@ export class Game {
             if (!this.player.controls.isLocked) {
                 this.player.controls.lock();
             }
-            if (this.musicPlayer && !this.musicPlayer.isPlaying) {
-                this.musicPlayer.loadAndPlay('/soundtrack.mid');
+
+            // AudioContext must resume immediately on user gesture
+            if (this.musicPlayer) {
+                this.musicPlayer.resumeContext().then(() => {
+                    if (!this.musicPlayer.isPlaying) {
+                        this.musicPlayer.loadAndPlay('soundtrack.mid');
+                    }
+                });
             }
         };
 

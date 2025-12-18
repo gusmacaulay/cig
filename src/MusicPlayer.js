@@ -7,9 +7,14 @@ export class MusicPlayer {
         this.synths = [];
     }
 
+    // Call this immediately on user interaction
+    resumeContext() {
+        return Tone.start();
+    }
+
     async loadAndPlay(url) {
-        // Wait for user interaction first (usually handled by game start click)
-        await Tone.start();
+        // Ensure ready (idempotent)
+        await Tone.loaded();
 
         const midi = await Midi.fromUrl(url);
 
