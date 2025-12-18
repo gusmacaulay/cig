@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cigarettes & Insults</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container"></div>
+
+    <div id="ui-layer">
+        <div id="crosshair">+</div>
+        <div id="ammo-counter">
+            <span id="weapon-name">Cigarette</span>
+            <span id="ammo-count">∞</span>
+        </div>
+        <div id="health-bar">
+            <div id="health-fill"></div>
+        </div>
+        <div id="start-screen" class="active">
+            <h1>CIGARETTES & INSULTS</h1>
+            <p>Click to Start</p>
+            <p class="controls">WASD to Move | Click to Attack | 1/2 to Switch Weapons</p>
+        </div>
+        <div id="game-over-screen">
+            <h1>YOU DIED</h1>
+            <p>Click to Restart</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
